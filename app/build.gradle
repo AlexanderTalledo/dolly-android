@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 29
@@ -43,6 +45,9 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
     def view_pager_version = '1.0.0'
     implementation "androidx.viewpager2:viewpager2:$view_pager_version"
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     def espresso_version = '3.3.0'
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
